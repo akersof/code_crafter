@@ -1,0 +1,14 @@
+name: code_crafter
+description: A starting point for Dart libraries or applications.
+# version: 1.0.0
+# homepage: https://www.example.com
+# author: akersof <akersof@kiwitch.com>
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  dart_style: ^1.2.2
+
+dev_dependencies:
+  test: ^1.0.0
