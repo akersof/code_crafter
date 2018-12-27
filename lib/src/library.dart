@@ -45,18 +45,23 @@ class Export extends _ImExport {
     super(package, '', show, hide, false);
 }
 
+class LibraryTag extends SourceElement {
+  final String name;
+  LibraryTag({@required this.name}): assert(name.isNotEmpty);
+  @override
+  String get source => formatter.format('library $name $semicolon');
+}
+
 class Part extends SourceElement {
   final Package package;
-  Part(this.package);
+  Part({@required this.package});
   @override
-  // TODO: implement source
-  String get source => null;
+  String get source => formatter.format('part ${quote(package.uri)} $semicolon');
 }
 
 class PartOf extends SourceElement {
-  final String package;
-  PartOf(this.package);
+  final LibraryTag library;
+  PartOf({@required this.library});
   @override
-  // TODO: implement source
-  String get source => null;
+  String get source => formatter.format('part of ${library.name} $semicolon');
 }
