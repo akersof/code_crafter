@@ -17,11 +17,11 @@ abstract class _ImExport extends SourceElement {
   final List<String> show;
   final List<String> hide;
 
-  _ImExport(this.package, String as, List<String> show, List<String> hide, this.isImport) :
-        as = as ?? '',
+  _ImExport(this.package, String as, List<String> show, List<String> hide,
+      this.isImport)
+      : as = as ?? '',
         show = show ?? [],
-        hide = hide ?? []
-  ;
+        hide = hide ?? [];
 
   @override
   String get source {
@@ -30,24 +30,25 @@ abstract class _ImExport extends SourceElement {
     final String asPart = as.isEmpty || !isImport ? '' : 'as $as';
     final String showPart = show.isEmpty ? '' : 'show ${show.join(', ')}';
     final String hidePart = hide.isEmpty ? '' : 'hide ${hide.join(', ')}';
-    final String output = '$prefix $packageName $asPart $showPart $hidePart $semicolon';
+    final String output =
+        '$prefix $packageName $asPart $showPart $hidePart $semicolon';
     return formatter.format(output);
   }
 }
 
 class Import extends _ImExport {
-  Import({Package package, String as, List<String> show, List<String> hide}) :
-  super(package, as, show, hide, true);
+  Import({Package package, String as, List<String> show, List<String> hide})
+      : super(package, as, show, hide, true);
 }
 
 class Export extends _ImExport {
-  Export({Package package, List<String> show, List<String> hide}) :
-    super(package, '', show, hide, false);
+  Export({Package package, List<String> show, List<String> hide})
+      : super(package, '', show, hide, false);
 }
 
 class LibraryTag extends SourceElement {
   final String name;
-  LibraryTag({@required this.name}): assert(name.isNotEmpty);
+  LibraryTag({@required this.name}) : assert(name.isNotEmpty);
   @override
   String get source => formatter.format('library $name $semicolon');
 }
@@ -56,7 +57,8 @@ class Part extends SourceElement {
   final Package package;
   Part({@required this.package});
   @override
-  String get source => formatter.format('part ${quote(package.uri)} $semicolon');
+  String get source =>
+      formatter.format('part ${quote(package.uri)} $semicolon');
 }
 
 class PartOf extends SourceElement {
