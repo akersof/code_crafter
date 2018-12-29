@@ -2,8 +2,6 @@ import 'package:meta/meta.dart';
 import 'package:code_crafter/src/source_element.dart';
 import 'package:code_crafter/src/utils.dart';
 
-//TODO: need to write a class for the script and library tag;
-
 class Package {
   final String uri;
   //TODO: check viability of the uri in constructor, prefix, sufix, path, presence in pubspec.yaml possible? porbbaly with analyzer
@@ -66,4 +64,19 @@ class PartOf extends SourceElement {
   PartOf({@required this.library});
   @override
   String get source => formatter.format('part of ${library.name} $semicolon');
+}
+
+//TODO: just a draft of the Library class
+class Library extends SourceElement {
+  final LibraryTag libraryTag;
+  final Part part;
+  final PartOf partof;
+  final List<Import> imports;
+  final List<Export> exports;
+  Library(this.libraryTag, this.part, this.partof, this.imports, this.exports);
+  @override
+  String get source {
+    //final String output;
+    return formatter.format(libraryTag.source + part.source + partof.source + imports.join(' ') + exports.join(' '));
+  }
 }

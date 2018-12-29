@@ -4,5 +4,6 @@
 library code_crafter;
 
 export 'src/library.dart';
+export 'src/function.dart';
 
 // TODO: Export any libraries intended for clients of this package.
