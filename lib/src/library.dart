@@ -44,6 +44,7 @@ class Export extends _ImExport {
       : super(package, '', show, hide, false);
 }
 
+//TODO: following the best practice the name of a library should be a string with the path, so a class Package ?
 class LibraryTag extends SourceElement {
   final String name;
   LibraryTag({@required this.name}) : assert(name.isNotEmpty);
