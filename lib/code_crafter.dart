@@ -7,5 +7,6 @@ export 'src/library.dart';
 export 'src/function.dart';
 export 'src/variable.dart';
 export 'src/expression.dart';
+export 'src/types.dart';
 
 // TODO: Export any libraries intended for clients of this package.
