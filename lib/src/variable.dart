@@ -13,9 +13,7 @@ class Variable extends SourceElement {
   final Expression init;
   Variable({this.modifier, this.type = 'var', @required this.name, this.init})
       : assert(name.isNotEmpty) {
-    if (isConst && isFinal)
       //TODO: create a Exception strategy with clearer message, as meta programming debugging can be a real pain.
-      throw ('cant be const and final at the same time');
     if ((isConst || isFinal) && type == 'var')
       throw ('cant be var and const or final');
     //TODO: final field initialization can be deferred in constructor need to manage this.
