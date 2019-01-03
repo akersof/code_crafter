@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'source_element.dart';
 import 'expression.dart';
 import 'types.dart';
-import 'utils.dart';
+import '../utils/utils.dart';
 
 //TODO: just a draft of the variable class
 //TODO: we need to sperate the declaration of a variable and the usage of a variable as an expression.

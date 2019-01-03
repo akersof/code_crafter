@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
-import 'package:code_crafter/src/source_element.dart';
-import 'directive.dart';
-import 'package:code_crafter/src/utils.dart';
+import 'package:code_crafter/src/specs/source_element.dart';
+import 'package:code_crafter/src/specs/directive.dart';
+import 'package:code_crafter/src/utils/utils.dart';
 
 
 //TODO: just a draft of the Library class

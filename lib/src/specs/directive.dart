@@ -1,12 +1,16 @@
 import 'package:meta/meta.dart';
-import 'package:code_crafter/src/source_element.dart';
-import 'package:code_crafter/src/utils.dart';
+import 'source_element.dart';
+import '../utils/utils.dart';
 
 
 class Package {
   final String uri;
   //TODO: check viability of the uri in constructor, prefix, sufix, path, presence in pubspec.yaml possible? porbbaly with analyzer
-  Package({@required this.uri}) : assert(uri.isNotEmpty);
+  Package({@required this.uri}) : assert(uri.isNotEmpty) {
+    //TODO need to go deeper in the arch of the code_crafter package and find a better exception strategy
+    if(uri.isEmpty)
+      throw('A package uri can\'t be empty');
+  }
 }
 
 abstract class _ImExport extends SourceElement {

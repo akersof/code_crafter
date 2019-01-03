@@ -4,10 +4,10 @@
 library code_crafter;
 
 export 'src/library.dart';
-export 'src/function.dart';
-export 'src/variable.dart';
-export 'src/expression.dart';
-export 'src/types.dart';
-export 'src/directive.dart';
+export 'package:code_crafter/src/specs/function.dart';
+export 'src/specs/variable.dart';
+export 'src/specs/expression.dart';
+export 'src/specs/types.dart';
+export 'src/specs/directive.dart';
 
 // TODO: Export any libraries intended for clients of this package.
